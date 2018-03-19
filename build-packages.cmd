@@ -3,7 +3,8 @@ rem todo: setup appveyor
 
 SET currentDir=%~dp0
 
-rem Creuna.ApplicationInsights.TelemetryFiltering Creuna.Diagnostics Creuna.Diagnostics.Web EPiLog 
+echo Cleanup *.nupkg
+del *.nupkg
 
 SET project=Creuna.ApplicationInsights.TelemetryFiltering
 call build-package %project%

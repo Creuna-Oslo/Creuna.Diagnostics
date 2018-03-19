@@ -48,6 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Creuna.Diagnostics.AssemblyInfo.cs">
+      <Link>Properties\Creuna.Diagnostics.AssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="DefaultFilterTelemetryConfiguration.cs" />
     <Compile Include="FilterTelemetryConfiguration.cs" />
     <Compile Include="FilterTelemetryProcessor.cs" />
