@@ -33,98 +33,144 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EPiServer.ApplicationModules, Version=9.2.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\EPiServer.Framework.9.2.1\lib\net45\EPiServer.ApplicationModules.dll</HintPath>
+      <HintPath>..\packages\EPiServer.Framework.9.2.1\lib\net45\EPiServer.ApplicationModules.dll</HintPath>
     </Reference>
     <Reference Include="EPiServer.Data, Version=9.2.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\EPiServer.Framework.9.2.1\lib\net45\EPiServer.Data.dll</HintPath>
+      <HintPath>..\packages\EPiServer.Framework.9.2.1\lib\net45\EPiServer.Data.dll</HintPath>
     </Reference>
     <Reference Include="EPiServer.Data.Cache, Version=9.2.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\EPiServer.Framework.9.2.1\lib\net45\EPiServer.Data.Cache.dll</HintPath>
+      <HintPath>..\packages\EPiServer.Framework.9.2.1\lib\net45\EPiServer.Data.Cache.dll</HintPath>
     </Reference>
     <Reference Include="EPiServer.Events, Version=9.2.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\EPiServer.Framework.9.2.1\lib\net45\EPiServer.Events.dll</HintPath>
+      <HintPath>..\packages\EPiServer.Framework.9.2.1\lib\net45\EPiServer.Events.dll</HintPath>
     </Reference>
     <Reference Include="EPiServer.Framework, Version=9.2.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\EPiServer.Framework.9.2.1\lib\net45\EPiServer.Framework.dll</HintPath>
+      <HintPath>..\packages\EPiServer.Framework.9.2.1\lib\net45\EPiServer.Framework.dll</HintPath>
     </Reference>
     <Reference Include="EPiServer.Licensing, Version=9.2.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\EPiServer.Framework.9.2.1\lib\net45\EPiServer.Licensing.dll</HintPath>
+      <HintPath>..\packages\EPiServer.Framework.9.2.1\lib\net45\EPiServer.Licensing.dll</HintPath>
     </Reference>
     <Reference Include="EPiServer.Logging.Log4Net, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\EPiServer.Logging.Log4Net.2.0.0\lib\net45\EPiServer.Logging.Log4Net.dll</HintPath>
+      <HintPath>..\packages\EPiServer.Logging.Log4Net.2.0.0\lib\net45\EPiServer.Logging.Log4Net.dll</HintPath>
     </Reference>
     <Reference Include="EPiServer.Shell, Version=9.2.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\EPiServer.Framework.9.2.1\lib\net45\EPiServer.Shell.dll</HintPath>
+      <HintPath>..\packages\EPiServer.Framework.9.2.1\lib\net45\EPiServer.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Annotations, Version=11.1.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.11.1.0\lib\net20\JetBrains.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ApplicationInsights">
-      <HintPath>..\..\packages\Microsoft.ApplicationInsights.2.5.1\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.5.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.5.1\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Operations, Version=0.8.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Operations.0.8.2\lib\net46\Operations.dll</HintPath>
+      <HintPath>..\packages\Operations.0.8.2\lib\net46\Operations.dll</HintPath>
     </Reference>
     <Reference Include="Operations.Serilog, Version=0.8.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Operations.Serilog.0.8.2\lib\net46\Operations.Serilog.dll</HintPath>
+      <HintPath>..\packages\Operations.Serilog.0.8.2\lib\net46\Operations.Serilog.dll</HintPath>
     </Reference>
     <Reference Include="Operations.Trackers.Profiler, Version=0.8.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Operations.Trackers.Profiler.0.8.2\lib\net46\Operations.Trackers.Profiler.dll</HintPath>
+      <HintPath>..\packages\Operations.Trackers.Profiler.0.8.2\lib\net46\Operations.Trackers.Profiler.dll</HintPath>
     </Reference>
     <Reference Include="Operations.Web, Version=0.8.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Operations.Web.0.8.2\lib\net46\Operations.Web.dll</HintPath>
+      <HintPath>..\packages\Operations.Web.0.8.2\lib\net46\Operations.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Serilog">
-      <HintPath>..\..\packages\Serilog.2.6.0\lib\net46\Serilog.dll</HintPath>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.2.6.0\lib\net46\Serilog.dll</HintPath>
     </Reference>
     <Reference Include="Serilog.Exceptions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=fc5550082a9c642c, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Serilog.Exceptions.4.0.0\lib\net45\Serilog.Exceptions.dll</HintPath>
+      <HintPath>..\packages\Serilog.Exceptions.4.0.0\lib\net45\Serilog.Exceptions.dll</HintPath>
     </Reference>
-    <Reference Include="Serilog.Sinks.ApplicationInsights">
-      <HintPath>..\..\packages\Serilog.Sinks.ApplicationInsights.2.5.1\lib\net45\Serilog.Sinks.ApplicationInsights.dll</HintPath>
+    <Reference Include="Serilog.Formatting.Compact, Version=1.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Formatting.Compact.1.0.0\lib\net45\Serilog.Formatting.Compact.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.ApplicationInsights, Version=2.5.1.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.ApplicationInsights.2.5.1\lib\net45\Serilog.Sinks.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.File, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.File.4.0.0\lib\net45\Serilog.Sinks.File.dll</HintPath>
     </Reference>
     <Reference Include="Serilog.Sinks.Log4Net, Version=1.5.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Serilog.Sinks.Log4Net.1.5.16\lib\net45\Serilog.Sinks.Log4Net.dll</HintPath>
+      <HintPath>..\packages\Serilog.Sinks.Log4Net.1.5.16\lib\net45\Serilog.Sinks.Log4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.PeriodicBatching, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.PeriodicBatching.2.1.1\lib\net45\Serilog.Sinks.PeriodicBatching.dll</HintPath>
     </Reference>
     <Reference Include="Serilog.Sinks.Seq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Serilog.Sinks.Seq.4.0.0\lib\net45\Serilog.Sinks.Seq.dll</HintPath>
+      <HintPath>..\packages\Serilog.Sinks.Seq.4.0.0\lib\net45\Serilog.Sinks.Seq.dll</HintPath>
     </Reference>
     <Reference Include="SerilogWeb.Classic, Version=3.0.0.0, Culture=neutral, PublicKeyToken=9462ddd55fbc0e7f, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SerilogWeb.Classic.3.0.24\lib\net45\SerilogWeb.Classic.dll</HintPath>
+      <HintPath>..\packages\SerilogWeb.Classic.3.0.24\lib\net45\SerilogWeb.Classic.dll</HintPath>
     </Reference>
-    <Reference Include="SerilogWeb.Classic.Mvc">
-      <HintPath>..\..\packages\SerilogWeb.Classic.Mvc.0.1.9\lib\net45\SerilogWeb.Classic.Mvc.dll</HintPath>
+    <Reference Include="SerilogWeb.Classic.Mvc, Version=0.1.0.0, Culture=neutral, PublicKeyToken=9462ddd55fbc0e7f, processorArchitecture=MSIL">
+      <HintPath>..\packages\SerilogWeb.Classic.Mvc.0.1.9\lib\net45\SerilogWeb.Classic.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="SerilogWeb.Classic.WebApi">
-      <HintPath>..\..\packages\SerilogWeb.Classic.WebApi.2.0.8\lib\net45\SerilogWeb.Classic.WebApi.dll</HintPath>
+    <Reference Include="SerilogWeb.Classic.WebApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9462ddd55fbc0e7f, processorArchitecture=MSIL">
+      <HintPath>..\packages\SerilogWeb.Classic.WebApi.2.0.8\lib\net45\SerilogWeb.Classic.WebApi.dll</HintPath>
     </Reference>
     <Reference Include="StructureMap, Version=3.1.6.186, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\structuremap-signed.3.1.6.186\lib\net40\StructureMap.dll</HintPath>
+      <HintPath>..\packages\structuremap-signed.3.1.6.186\lib\net40\StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="StructureMap.Net4, Version=3.1.6.186, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\structuremap-signed.3.1.6.186\lib\net40\StructureMap.Net4.dll</HintPath>
+      <HintPath>..\packages\structuremap-signed.3.1.6.186\lib\net40\StructureMap.Net4.dll</HintPath>
     </Reference>
     <Reference Include="StructureMap.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\structuremap.web-signed.3.1.6.186\lib\net40\StructureMap.Web.dll</HintPath>
+      <HintPath>..\packages\structuremap.web-signed.3.1.6.186\lib\net40\StructureMap.Web.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlClient, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.4.0\lib\net46\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.AccessControl, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.4.0\lib\net46\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.4.0\lib\net46\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.AccessControl, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.AccessControl.4.4.0\lib\net46\System.Threading.AccessControl.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -134,6 +180,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Creuna.Diagnostics.AssemblyInfo.cs">
+      <Link>Properties\Creuna.Diagnostics.AssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="AppLogger.cs" />
     <Compile Include="AppSettingsDiagnosticsConfiguration.cs" />
     <Compile Include="DiagnosticsConfiguration.cs" />
@@ -142,11 +191,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Creuna.Diagnostics.Web.Episerver.nuspec" />
+    <None Include="packages.config" />
     <None Include="web.config.transform">
       <SubType>Designer</SubType>
     </None>
     <None Include="app.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Creuna.ApplicationInsights.TelemetryFiltering\Creuna.ApplicationInsights.TelemetryFiltering.csproj">
@@ -165,6 +214,9 @@
       <Project>{10AD21D9-1A0B-443B-B2C3-4852A078A9F2}</Project>
       <Name>EPiLog</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
