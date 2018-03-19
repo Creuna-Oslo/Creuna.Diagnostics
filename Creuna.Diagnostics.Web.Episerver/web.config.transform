@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+    <!-- Diagnostics -->
+    <!-- Verbose | Debug | Information | Warning | Error | Fatal -->
+    <add key="Diagnostics.Level" value="Information" />
+    <!--<add key="Diagnostics.Seq" value="http://localhost:5341/" />-->
+    <add key="Diagnostics.Seq" value="" />
+    <add key="Diagnostics.DebugLog" value="false" />
+    <add key="Diagnostics.LogActions" value="true" />
+    <add key="Diagnostics.iKey" value="" />
+    <add key="Diagnostics.TraceOperationsLongerThanXmsec" value="1000" />
+    <add key="Diagnostics.FilterTelemetry" value="true" />
+    <!-- NOTE: the following feature toggle should be handled manually in the _Layout.cshtml -->
+    <add key="Diagnostics.ClientSideTelemetry" value="false" />
+</configuration>
