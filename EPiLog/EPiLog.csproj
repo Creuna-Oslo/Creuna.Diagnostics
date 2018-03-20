@@ -92,6 +92,7 @@
       <HintPath>..\..\packages\Serilog.2.6.0\lib\net46\Serilog.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -126,7 +127,10 @@
     <Compile Include="DefaultEPiLogConfiguration.cs" />
     <Compile Include="Enrichers\EPiServerEditModeEnricher.cs" />
     <Compile Include="EPiLogConfiguration.cs" />
-    <Compile Include="IEPiLogConfiguration.cs" />
+    <Compile Include="Configuration\IEPiLogConfiguration.cs" />
+    <Compile Include="Configuration\EPiLogConfigurationSection.cs" />
+    <Compile Include="Configuration\LogConfigurationElement.cs" />
+    <Compile Include="Configuration\LogsConfigurationCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SerilogFactory.cs" />
     <Compile Include="SerilogLogger.cs" />
@@ -135,6 +139,9 @@
     <None Include="app.config" />
     <None Include="EPiLog.nuspec" />
     <None Include="packages.config" />
+    <Content Include="web.config.transform">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

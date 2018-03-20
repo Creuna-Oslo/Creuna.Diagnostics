@@ -1,6 +1,6 @@
 using Serilog.Events;
 
-namespace EPiLog
+namespace EPiLog.Configuration
 {
     public interface IEPiLogConfiguration
     {

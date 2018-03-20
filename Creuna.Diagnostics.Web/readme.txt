@@ -1,1 +1,0 @@
-﻿use OperationsSerilogDefaults.Apply() to setup defaults from Operations.Serilog

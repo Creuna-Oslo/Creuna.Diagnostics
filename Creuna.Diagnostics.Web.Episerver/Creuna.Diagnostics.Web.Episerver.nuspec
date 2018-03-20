@@ -15,7 +15,4 @@
         <copyright>$copyright$</copyright>
         <tags>Creuna diagnostics application insights profile operations</tags>
     </metadata>
-    <files>
-        <file src="AppLogger.cs" target="content\Diagnostics\AppLogger.Sample.cs" />
-    </files>
 </package>

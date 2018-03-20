@@ -1,4 +1,5 @@
 ﻿using System;
+using EPiLog.Configuration;
 using EPiServer.Logging;
 using Serilog.Events;
 using ILogger = Serilog.ILogger;
@@ -25,7 +26,7 @@ namespace EPiLog
         /// <param name="name">Name of the logger</param>
         public SerilogLogger(string name)
         {
-            Logger = Serilog.Log.Logger;
+            Logger = name == null ? Serilog.Log.Logger : Serilog.Log.ForContext("SourceContext", name);
             LoggerName = name;
             FilterLevel = Configuration.GetLevel(name);
         }
@@ -91,25 +92,11 @@ namespace EPiLog
                 return;
             }
 
-            var log = boundaryType != null && boundaryType != typeof(LoggerExtensions)
+            var log = LoggerName == null && boundaryType != null && boundaryType != typeof(LoggerExtensions)
                 ? Logger.ForContext(boundaryType)
                 : Logger;
-            //if ((boundaryType != null) && ())
-            //{
-            //    this.Logger.ForContext(boundaryType);
 
-            //    // global::Serilog.Log.ForContext(boundaryType);
-            //}
-
-            if (LoggerName != null)
-            {
-                log.Write(mappedLevel, exception, $"{{logger}} {messageFormatter(state, exception)}", LoggerName);
-            }
-            else
-            {
-                log.Write(mappedLevel, exception, messageFormatter(state, exception));
-            }
-            // global::Serilog.Log.Write(mappedLevel, exception, messageFormatter(state, exception));
+            log.Write(mappedLevel, exception, messageFormatter(state, exception));
         }
 
         /// <summary>

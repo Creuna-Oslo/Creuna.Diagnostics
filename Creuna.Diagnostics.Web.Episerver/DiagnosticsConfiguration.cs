@@ -1,4 +1,5 @@
 using System;
+using Creuna.Diagnostics.Web.Episerver.Internal;
 
 namespace Creuna.Diagnostics.Web.Episerver
 {

@@ -16,6 +16,5 @@ namespace Creuna.Diagnostics.Web.Episerver
         bool FilterTelemetry { get; }
         bool ClientSideTelemetry { get; }
         TimeSpan TraceOperationsLongerThan { get; }
-        LogEventLevel GetLevel(string name);
     }
 }

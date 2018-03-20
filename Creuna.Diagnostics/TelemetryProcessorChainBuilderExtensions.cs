@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using Creuna.Diagnostics.Internal;
 using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.ApplicationInsights.Extensibility.Implementation;
 using Serilog;

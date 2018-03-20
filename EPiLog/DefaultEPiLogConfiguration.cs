@@ -1,32 +1,53 @@
 using System.Collections.Generic;
+using System.Configuration;
+using EPiLog.Configuration;
+using EPiServer.ServiceLocation;
 using Serilog.Events;
 
 namespace EPiLog
 {
+    [ServiceConfiguration(typeof(IEPiLogConfiguration), Lifecycle = ServiceInstanceScope.Singleton)]
     public class DefaultEPiLogConfiguration : IEPiLogConfiguration
     {
-        public Dictionary<string, LogEventLevel> EnabledLevels = GetDefaultLevels();
-        public virtual LogEventLevel LogLevel => LogEventLevel.Information;
+        private readonly Dictionary<string, LogEventLevel> _levels = new Dictionary<string, LogEventLevel>();
+        private LogEventLevel _defaultLevel;
+        private bool _initialized = false;
+        private readonly object _syncRoot = new object();
+
         public virtual LogEventLevel GetLevel(string name)
         {
-            var result = EnabledLevels.ContainsKey(name)
-                ? EnabledLevels[name]
-                : LogLevel;
-
-            return result;
+            EnsureInitialized();
+            return _levels.TryGetValue(name, out LogEventLevel level) ? level : _defaultLevel;
         }
 
-        private static Dictionary<string, LogEventLevel> GetDefaultLevels()
+        protected virtual void Initialize()
         {
-            return new Dictionary<string, LogEventLevel>
+            var section = ConfigurationManager.GetSection(EPiLogConfigurationSection.SectionName) as EPiLogConfigurationSection;
+            if (section == null)
             {
-                { "EPiServer.Core.OptimisticCache", LogEventLevel.Error },
-                { "EPiServer.Core.ContentProvider", LogEventLevel.Error },
-                { "EPiServer.Data.Dynamic.Providers.DbDataStoreProvider", LogEventLevel.Error },
-                { "EPiServer.Data.Providers.SqlDatabaseHandler", LogEventLevel.Error },
-                { "EPiServer.Data.Providers.ConnectionContext", LogEventLevel.Error },
-                { "EPiServer.Framework.Initialization.InitializationEngine", LogEventLevel.Error },
-            };
+                throw new ConfigurationErrorsException($"Missed configuration section <{EPiLogConfigurationSection.SectionName} />");
+            }
+
+            _defaultLevel = section.DefaultLevel;
+            foreach (LogConfigurationElement logLevel in section.LogLevels)
+            {
+                _levels[logLevel.Log] = logLevel.Level.GetValueOrDefault(_defaultLevel);
+            }
+        }
+
+        protected void EnsureInitialized()
+        {
+            if (!_initialized)
+            {
+                lock (_syncRoot)
+                {
+                    if (!_initialized)
+                    {
+                        Initialize();
+                        _initialized = true;
+                    }
+                }
+            }
         }
     }
 }

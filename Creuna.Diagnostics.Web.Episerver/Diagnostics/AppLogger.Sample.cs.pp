@@ -1,12 +1,17 @@
-﻿using System;
-using System.Web.Hosting;
+using System;
 using System.Web.Http;
 using System.Web.Http.ExceptionHandling;
 using System.Web.Mvc;
 using Creuna.ApplicationInsights.TelemetryFiltering;
+// ReSharper disable RedundantUsingDirective
+using Creuna.Diagnostics;
+using Creuna.Diagnostics.Web;
+using Creuna.Diagnostics.Web.Episerver;
+// ReSharper restore RedundantUsingDirective
 using EPiLog;
 using EPiLog.Enrichers;
 using EPiServer.Logging.Compatibility;
+using EPiServer.ServiceLocation;
 using Microsoft.ApplicationInsights;
 using Microsoft.ApplicationInsights.Channel;
 using Microsoft.ApplicationInsights.Extensibility;
@@ -24,8 +29,28 @@ using SerilogWeb.Classic.Enrichers;
 using SerilogWeb.Classic.Mvc.Enrichers;
 using SerilogWeb.Classic.WebApi.Enrichers;
 
-namespace Creuna.Diagnostics.Web.Episerver
+namespace cCreuna.Diagnostics.Web.Episerver.Internal
 {
+    /*  AppLogger is an entry point, don't forget to call .Startup() and .Shutdown(). 
+     *  It's recommended to setup logging independently from service container. 
+     *  Sample initialization in global.asax.cs:
+       
+            private AppLogger AppLogger { get; } = new AppLogger(Creuna.Diagnostics.Web.Episerver.DiagnosticsConfiguration.Current);
+            protected void Application_Start()
+            {
+                AreaRegistration.RegisterAllAreas();
+                GlobalConfiguration.Configure(WebApiConfig.Register);
+                RouteConfig.RegisterRoutes(RouteTable.Routes);
+                // ...
+                AppLogger.Startup();
+            }
+
+            protected void Application_End()
+            {
+                AppLogger.Shutdown();
+            } 
+    */ 
+
     public class AppLogger
     {
         private readonly IDiagnosticsConfiguration _configuration;
@@ -57,6 +82,7 @@ namespace Creuna.Diagnostics.Web.Episerver
 
         public virtual void Startup()
         {
+            FilterTelemetryConfiguration.Getter = () => ServiceLocator.Current.GetInstance<IFilterTelemetryConfiguration>();
             OperationsSerilogDefaults.Apply();
 
             if (_configuration.LogActions)

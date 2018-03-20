@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+    <configSections>
+        <section name="epilog" type="EPiLog.Configuration.EPiLogConfigurationSection, EPiLog" requirePermission="false" />
+    </configSections>
+    
+    <!-- Use serilog levels: Verbose | Debug | Information | Warning | Error | Fatal -->
+    <epilog defaultLevel="Warning">
+        <!-- Please keep in mind that we can not log more than enabled by Serilog.Log.MinimumLevel -->
+        <logLevels>
+            <add log="EPiServer.Core.OptimisticCache" level="Error" />
+            <add log="EPiServer.Core.ContentProvider" level="Error" />
+            <add log="EPiServer.Data.Dynamic.Providers.DbDataStoreProvider" level="Error" />
+            <add log="EPiServer.Data.Providers.SqlDatabaseHandler" level="Error" />
+            <add log="EPiServer.Data.Providers.ConnectionContext" level="Error" />
+            <add log="EPiServer.Framework.Initialization.InitializationEngine" level="Error" />
+        </logLevels>
+    </epilog>
+</configuration>

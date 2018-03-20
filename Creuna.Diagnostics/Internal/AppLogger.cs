@@ -1,4 +1,4 @@
-namespace Creuna.Diagnostics
+namespace Creuna.Diagnostics.Internal
 {
     public class AppLogger
     {

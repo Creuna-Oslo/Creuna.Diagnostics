@@ -1,4 +1,5 @@
 ﻿using System;
+using EPiLog.Configuration;
 
 namespace EPiLog
 {

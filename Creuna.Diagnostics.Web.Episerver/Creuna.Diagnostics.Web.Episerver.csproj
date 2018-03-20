@@ -177,18 +177,19 @@
     <Compile Include="..\Creuna.Diagnostics.AssemblyInfo.cs">
       <Link>Properties\Creuna.Diagnostics.AssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="AppLogger.cs" />
-    <Compile Include="AppSettingsDiagnosticsConfiguration.cs" />
+    <Compile Include="Internal\AppLogger.cs" />
+    <Compile Include="Internal\AppSettingsDiagnosticsConfiguration.cs" />
     <Compile Include="DiagnosticsConfiguration.cs" />
+    <Content Include="Diagnostics\AppLogger.Sample.cs.pp" />
     <Compile Include="IDiagnosticsConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Creuna.Diagnostics.Web.Episerver.nuspec" />
     <None Include="packages.config" />
-    <None Include="web.config.transform">
+    <Content Include="web.config.transform">
       <SubType>Designer</SubType>
-    </None>
+    </Content>
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
@@ -210,7 +211,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="readme.txt" />
+    <None Include="buildtools\Replace-Text-In-File.ps1" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>powershell $(ProjectDir)buildtools\Replace-Text-In-File.ps1 $(ProjectDir)\Internal\AppLogger.cs $(ProjectDir)Diagnostics\AppLogger.Sample.cs.pp 'namespace Creuna.Diagnostics.Web.Episerver.Internal' 'namespace $rootnamespace$.Diagnostics'</PostBuildEvent>
+  </PropertyGroup>
 </Project>

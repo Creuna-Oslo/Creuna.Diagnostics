@@ -1,13 +1,13 @@
 using System;
-using System.Collections.Generic;
 using System.Configuration;
+using Creuna.ApplicationInsights.TelemetryFiltering;
 using Creuna.Diagnostics.FeatureToggles;
 using Serilog.Events;
 using ClientSideTelemetry = Creuna.Diagnostics.Web.FeatureToggles.ClientSideTelemetry;
 
-namespace Creuna.Diagnostics.Web.Episerver
+namespace Creuna.Diagnostics.Web.Episerver.Internal
 {
-    public class AppSettingsDiagnosticsConfiguration : IDiagnosticsConfiguration
+    public class AppSettingsDiagnosticsConfiguration : IDiagnosticsConfiguration, IFilterTelemetryConfiguration
     {
         public AppSettingsDiagnosticsConfiguration()
         {
@@ -33,29 +33,5 @@ namespace Creuna.Diagnostics.Web.Episerver
         public bool ClientSideTelemetry { get; } 
 
         public TimeSpan TraceOperationsLongerThan { get; }
-
-        public Dictionary<string, LogEventLevel> EnabledLevels = GetDefaultLevels();
-
-        private static Dictionary<string, LogEventLevel> GetDefaultLevels()
-        {
-            return new Dictionary<string, LogEventLevel>
-            {
-                { "EPiServer.Core.OptimisticCache", LogEventLevel.Error },
-                { "EPiServer.Core.ContentProvider", LogEventLevel.Error },
-                { "EPiServer.Data.Dynamic.Providers.DbDataStoreProvider", LogEventLevel.Error },
-                { "EPiServer.Data.Providers.SqlDatabaseHandler", LogEventLevel.Error },
-                { "EPiServer.Data.Providers.ConnectionContext", LogEventLevel.Error },
-                { "EPiServer.Framework.Initialization.InitializationEngine", LogEventLevel.Error },
-            };
-        }
-
-        public virtual LogEventLevel GetLevel(string name)
-        {
-            var result = EnabledLevels.ContainsKey(name)
-                ? EnabledLevels[name]
-                : LogLevel;
-
-            return result;
-        }
     }
 }
