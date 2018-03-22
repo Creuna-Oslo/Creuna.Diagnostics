@@ -29,7 +29,7 @@ using SerilogWeb.Classic.Enrichers;
 using SerilogWeb.Classic.Mvc.Enrichers;
 using SerilogWeb.Classic.WebApi.Enrichers;
 
-namespace cCreuna.Diagnostics.Web.Episerver.Internal
+namespace $rootnamespace$.Diagnostics
 {
     /*  AppLogger is an entry point, don't forget to call .Startup() and .Shutdown(). 
      *  It's recommended to setup logging independently from service container. 
