@@ -1,6 +1,6 @@
 namespace Creuna.Diagnostics.FeatureToggles
 {
-    public class ClientSideTelemetry : DiagnosticsFeatureToggle
+    public class DestructureContextData : DiagnosticsFeatureToggle
     {
         protected override bool Default => false;
     }

@@ -13,5 +13,6 @@
         <add key="Diagnostics.FilterTelemetry" value="true" />
         <!-- NOTE: the following feature toggle should be handled manually in the _Layout.cshtml -->
         <add key="Diagnostics.ClientSideTelemetry" value="false" />
+        <add key="Diagnostics.DestructureContextData" value="false" />
     </appSettings>
 </configuration>

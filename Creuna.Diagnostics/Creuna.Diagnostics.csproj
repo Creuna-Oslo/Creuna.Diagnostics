@@ -58,8 +58,8 @@
     <Compile Include="..\Creuna.Diagnostics.AssemblyInfo.cs">
       <Link>Properties\Creuna.Diagnostics.AssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="FeatureToggles\DestructureContextData.cs" />
     <Compile Include="Internal\AppLogger.cs" />
-    <Compile Include="FeatureToggles\ClientSideTelemetry.cs" />
     <Compile Include="FeatureToggles\DebugLog.cs" />
     <Compile Include="FeatureToggles\DiagnosticsFeatureToggle.cs" />
     <Compile Include="FeatureToggles\FilterTelemetry.cs" />

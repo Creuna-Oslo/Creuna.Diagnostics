@@ -13,6 +13,7 @@ namespace Creuna.Diagnostics.Web.Episerver
         string LogDir { get; }
         bool LogActions { get; }
         bool DebugLog { get; }
+        bool DestructureContextData { get; }
         bool FilterTelemetry { get; }
         bool ClientSideTelemetry { get; }
         TimeSpan TraceOperationsLongerThan { get; }

@@ -29,6 +29,7 @@ namespace Creuna.Diagnostics.Web.Episerver.Internal
         public string LogDir { get; } = ConfigurationManager.AppSettings["Diagnostics.LogDir"] ?? "~/App_Data/logs/";
         public bool LogActions { get; } = new LogActions().FeatureEnabled;
         public bool DebugLog { get; } = new DebugLog().FeatureEnabled;
+        public bool DestructureContextData { get; } = new DestructureContextData().FeatureEnabled;
         public bool FilterTelemetry { get; } = new FilterTelemetry().FeatureEnabled;
         public bool ClientSideTelemetry { get; } 
 

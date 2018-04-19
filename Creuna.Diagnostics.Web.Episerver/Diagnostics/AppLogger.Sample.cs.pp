@@ -112,6 +112,11 @@ namespace $rootnamespace$.Diagnostics
             //    logDir = HostingEnvironment.MapPath(logDir);
             //}
 
+            if (_configuration.DestructureContextData)
+            {
+                log.ConfigureDefaultOperationsDestructuring();
+                Operations.Serilog.Factories.UseDestructuring();
+            }
 
             log
                 .MinimumLevel.Is(_configuration.LogLevel)

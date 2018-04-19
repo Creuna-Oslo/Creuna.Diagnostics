@@ -65,4 +65,5 @@ public class MyEPiServerApp : EPiServer.Global
 ```
 
 ## Release Notes
+  - v0.9.2 - added Diagnostics.DestructureContextData feature toggle
   - v0.9.1 - Initial release 
