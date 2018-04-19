@@ -65,4 +65,4 @@ public class MyEPiServerApp : EPiServer.Global
 ```
 
 ## Release Notes
-  - v0.9.0 - Initial release 
+  - v0.9.1 - Initial release 

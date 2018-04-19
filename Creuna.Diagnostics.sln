@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPiLog", "EPiLog\EPiLog.csp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F940BC22-6781-451A-B16D-203706BCA3D5}"
 	ProjectSection(SolutionItems) = preProject
+		build-package.cmd = build-package.cmd
+		build-packages.cmd = build-packages.cmd
 		Creuna.Diagnostics.AssemblyInfo.cs = Creuna.Diagnostics.AssemblyInfo.cs
 		readme.md = readme.md
 	EndProjectSection
