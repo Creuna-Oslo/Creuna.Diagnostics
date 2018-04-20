@@ -16,22 +16,21 @@ Creuna.Diagnostics.Web.Episerver
 ```
 public class MyEPiServerApp : EPiServer.Global
 {           
-    private AppLogger AppLogger { get; } = new AppLogger(Creuna.Diagnostics.Web.Episerver.DiagnosticsConfiguration.Current);
-        
+	private static AppLogger AppLogger { get; private set; } 
 	protected void Application_Start()
-    {
-        AreaRegistration.RegisterAllAreas();
-        GlobalConfiguration.Configure(WebApiConfig.Register);
-        RouteConfig.RegisterRoutes(RouteTable.Routes);
-            
+	{
+		AppLogger = new AppLogger(Creuna.Diagnostics.Web.Episerver.DiagnosticsConfiguration.Current);
+		AreaRegistration.RegisterAllAreas();
+		GlobalConfiguration.Configure(WebApiConfig.Register);
+		RouteConfig.RegisterRoutes(RouteTable.Routes);
 		// ...
-        AppLogger.Startup();
-    }
+		AppLogger.Startup();
+	}
 
-    protected void Application_End()
-    {
-        AppLogger.Shutdown();
-    } 
+	protected void Application_End()
+	{
+		AppLogger?.Shutdown();
+	} 
 }
 ```
 3. Setup 3rd-parties
@@ -65,4 +64,6 @@ public class MyEPiServerApp : EPiServer.Global
 ```
 
 ## Release Notes
+  - v0.9.3 - fixed ugly bug in the recommended usage comments inside App_Logger. Keep in mind ASP.NET can create multiple Global instances
+  - v0.9.2 - added Diagnostics.DestructureContextData feature toggle
   - v0.9.1 - Initial release 

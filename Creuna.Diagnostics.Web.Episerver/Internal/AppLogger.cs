@@ -35,9 +35,10 @@ namespace Creuna.Diagnostics.Web.Episerver.Internal
      *  It's recommended to setup logging independently from service container. 
      *  Sample initialization in global.asax.cs:
        
-            private AppLogger AppLogger { get; } = new AppLogger(Creuna.Diagnostics.Web.Episerver.DiagnosticsConfiguration.Current);
+            private static AppLogger AppLogger { get; private set; } 
             protected void Application_Start()
             {
+                AppLogger = new AppLogger(Creuna.Diagnostics.Web.Episerver.DiagnosticsConfiguration.Current);
                 AreaRegistration.RegisterAllAreas();
                 GlobalConfiguration.Configure(WebApiConfig.Register);
                 RouteConfig.RegisterRoutes(RouteTable.Routes);
@@ -47,41 +48,40 @@ namespace Creuna.Diagnostics.Web.Episerver.Internal
 
             protected void Application_End()
             {
-                AppLogger.Shutdown();
+                AppLogger?.Shutdown();
             } 
-    */ 
+    */
 
     public class AppLogger
     {
         private readonly IDiagnosticsConfiguration _configuration;
-        private readonly TelemetryClient _telemetryClient;
-        public static TelemetryClient TelemetryClient { get; private set; }
+        private TelemetryClient _telemetryClient;
 
         public AppLogger(IDiagnosticsConfiguration configuration)
         {
             _configuration = configuration;
-            if (configuration.ApplicationInsightsEnabled)
-            {
-                TelemetryConfiguration.Active.InstrumentationKey = configuration.InstrumentationKey;
+        }
 
-                if (configuration.FilterTelemetry)
+        public virtual void Startup()
+        {
+            if (_configuration.ApplicationInsightsEnabled)
+            {
+                TelemetryConfiguration.Active.InstrumentationKey = _configuration.InstrumentationKey;
+
+                if (_configuration.FilterTelemetry)
                 {
                     var builder = TelemetryConfiguration.Active.TelemetryProcessorChainBuilder;
                     builder.Use(x => new FilterTelemetryProcessor(x));
                     builder.BuildAndReinitialize();
                 }
 
-                _telemetryClient = TelemetryClient ?? new TelemetryClient(TelemetryConfiguration.Active);
-                TelemetryClient = _telemetryClient;
+                _telemetryClient = new TelemetryClient(TelemetryConfiguration.Active);
             }
             else
             {
                 TelemetryConfiguration.Active.DisableTelemetry = true;
             }
-        }
 
-        public virtual void Startup()
-        {
             FilterTelemetryConfiguration.Getter = () => ServiceLocator.Current.GetInstance<IFilterTelemetryConfiguration>();
             OperationsSerilogDefaults.Apply();
 
@@ -102,15 +102,6 @@ namespace Creuna.Diagnostics.Web.Episerver.Internal
             {
                 log = log.WriteTo.Seq(_configuration.SeqUrl);
             }
-
-            // uncomment the following if another file log is needed
-            //var logDir = _configuration.LogDir;
-
-            //if (logDir.StartsWith("~/") || logDir.StartsWith("/"))
-            //{
-            //    // n
-            //    logDir = HostingEnvironment.MapPath(logDir);
-            //}
 
             if (_configuration.DestructureContextData)
             {
@@ -209,6 +200,8 @@ namespace Creuna.Diagnostics.Web.Episerver.Internal
             Log.Logger.Information("Application shutdown");
             _telemetryClient?.Flush();
             Log.CloseAndFlush();
+
+            // not sure who is responsible for disposing TelemetryConfiguration singleton created by accessing TelemetryConfiguration.Active?
         }
     }
 }

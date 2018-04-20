@@ -35,12 +35,13 @@ namespace $rootnamespace$.Diagnostics
      *  It's recommended to setup logging independently from service container. 
      *  Sample initialization in global.asax.cs:
        
-            private AppLogger AppLogger { get; } = new AppLogger(Creuna.Diagnostics.Web.Episerver.DiagnosticsConfiguration.Current);
+            private static AppLogger AppLogger { get; private set; } 
             protected void Application_Start()
             {
                 AreaRegistration.RegisterAllAreas();
                 GlobalConfiguration.Configure(WebApiConfig.Register);
                 RouteConfig.RegisterRoutes(RouteTable.Routes);
+				AppLogger = new AppLogger(Creuna.Diagnostics.Web.Episerver.DiagnosticsConfiguration.Current);
                 // ...
                 AppLogger.Startup();
             }
